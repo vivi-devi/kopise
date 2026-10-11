@@ -8,7 +8,6 @@
       background-color: #FDF6E3;
       background-image: radial-gradient(#dda0d2 1px, transparent 1px);
       background-size: 25px 25px;
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,102 +18,79 @@
       z-index: 1;
       width: 500px;
       height: 550px;
-      background: white;
+      background: rgb(255, 248, 253);
       border-radius: 12px;
       position: relative;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-color: #fed7f6;
+      border-style: solid;
+      box-sizing: border-box;
     }
 
-    .note {
+    .sunshine {
       position: absolute;
-
       width: 180px;
       height: 180px;
-
-      background: #fbfeae;
+      background: #fdffbd;
       padding: 20px;
-
+      border-radius: 50%;
+      top: -35px;
+      left: -55px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-
-      transform: rotate(-5deg);
-    }
-
-    .note1 {
-      border-radius: 50%;
-      top: -35px;
-      left: -55px;
       transform: rotate(-10deg);
-    }
-
-    .note2 {
-      background: #f0fbfb;
-      bottom: -60px;
-      right: -70px;
-      height: 120px;
-      width: 300px;
-
-      transform: rotate(0deg);
-      border-radius: 16px;
     }
 
     .grid {
       display: grid;
       gap: 12px;
-
       height: 100%;
-
       padding: 60px 20px 20px 20px;
-
       grid-template-rows: auto 1fr;
       grid-template-columns: 1fr 0.5fr; 
     }
 
     .box {
       position: absolute;
-
-      background: #fcfbf6;
-      border-radius: 12px;
       padding: 10px;
-
-      border: 1px dashed #000000;
-      border-radius: 16px;
     }
 
-    .top {
-      top: 25px;
-      right: 18px;
-
+    .intro {
+      top: 15px;
+      right: 15px;
       width: 55%;
       height: 140px;
     }
 
-    .left {
+    .content {
       bottom: 15px;
-      left: 18px;
-
-      width: 50%;
+      left: 15px;
+      width: 90%;
       height: 300px;
       text-align: center;
-    }
-
-    .right {
-      bottom: 70px;
-      right: 18px;
-
-      width: 30%;
-      height: 245px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
 
     .link {
       display: block;    
       text-decoration: none;
       color: inherit;
+      line-height: 1.2;
+    }
+
+    .link::before,
+    .link::after {
+      content: "====♡====";
+      display: block;     
+      color: #dda0d2;
+      font-size: 14px;
+      letter-spacing: 2px;
     }
 
     .pxart {
@@ -124,11 +100,75 @@
 
     .blossom { top: 460px;  left: -80px; }
     .blossom1 { top: -80px;  left: 370px; transform: scaleX(-1); }
-    .sun { top: -95px;  left: -120px; }
-    .strawbs { top: 90px;  left: 510px; }
+    .ray { top: -95px;  left: -120px; }
     .butterflies { top: -90px;  left: 320px; transform: scaleX(-1);}
     .butterflies2 { top: -105px;   left: 530px; transform: scaleX(-1);}
     .butterflies3 { top: 450px;   left: -110px;}
+
+    .kirby-row {
+      padding-top: 25px;;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      margin: auto 0;
+    }
+
+    .link-col {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .link-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .splat {
+      max-width: 160px;
+      height: auto;
+    }
+
+    .splat-wrap {
+      position: relative;
+    }
+
+    .accents1 {
+      position: absolute;
+      top: -30px;    
+      right: -20px;    
+      max-width: 50px;
+      rotate: 10deg;  
+    }
+
+    .accents2 {
+      position: absolute;
+      bottom: -30px;  
+      left: -20px;    
+      max-width: 50px;
+      rotate: 190deg;  
+    }
+
+    .kirby-row .link-col:first-child {
+      transform: translateY(-40px); 
+    }
+
+    .kirby-row .link-col:last-child {
+      transform: translateY(40px);  
+    }
+
+    .kirby-row .link-col:first-child .link:first-child {
+      transform: translateX(25px);
+    }
+
+    .kirby-row .link-col:last-child .link:last-child {
+      transform: translateX(-25px);
+    }
+
+    .petals {
+      height: 45px;
+    }
 
   </style>
 </head>
@@ -136,52 +176,43 @@
   <div class="canvas">
 
     <img class="pxart blossom1" src="Images/blossom.png" alt="blossom">
-    <img class="pxart sun" src="Images/ray.png">
-    <img class="pxart strawbs" src="Images/pink-strawbs.png" alt="strawbs">
+    <img class="pxart ray" src="Images/ray.png">
     <img class="pxart butterflies" src="Images/butterflies1.png" alt="butterflies">
     <img class="pxart butterflies2" src="Images/butterflies2.png" alt="butterflies2">
     <img class="pxart butterflies3" src="Images/butterflies3.png" alt="butterflies3">
 
     <div class="grid">
-      <div class="box top">
-        <p> welcome to my little space in the web! <br><br>it's still a biiig work in progress but I hope you enjoy your stay !
-        </p>
-
+      <div class="box intro">
+        <p> <b>kopise ♡</b> <br><br> welcome to my little space in the web! <br><br>it's still a biiig work in progress but i hope you enjoy your stay !</p>
       </div>
-      <div class="box left"> 
-        <h3>
-          content
-        </h3>
-        <br>
-        <a href="about.html" class="link">
-          about me <br><br><br>
-        </a>
-        <a href="foto-album.html" class="link">
-          foto album <br><br><br>
-        </a>
-        <a href="matcha-boba.html" class="link">
-          matcha/boba blog <br><br><br>
-        </a>
-        <a href="thoughts.html" class="link">
-          thoughts (?) <br><br>
-        </a>
+      <div class="box content">
 
-      </div>
-      <div class="box right">
-        <h3>
-          updates
-        </h3>
-        <p> - added butterflies and pink strawbs ! </p>
-        <p> - working on the foto album n other art to add here</p>
+        <img class="petals" src="Images/petals.png">
+        
+        <div class="kirby-row">
+          <div class="link-col">
+            <a href="about.html" class="link">about me</a>
+            <a href="stream.html" class="link">stream</a>
+          </div>
+
+          <div class="splat-wrap">
+            <img class="accents1" src="Images/accents.png">
+            <img class="splat" src="Images/kirbysplat.png">
+            <img class="accents2" src="Images/accents.png">
+          </div>
+
+          <div class="link-col">
+            <a href="foto-album.html" class="link">foto album</a>
+            <a href="blog.html" class="link">blog</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="note note1"> 
-      recent happies !! <br><br> tx trip planned !<br> bought vlog cam !<br> 
-    </div>
-
-    <div class="note note2">
-      current song obsessions <br><br> fly away xtc - kettama <br> big shot cream soda <br> hot dog - limp bizkit
+    <div class="sunshine">
+      <div>
+        recent happies !! <br><br> guitar and amp bought !
+      </div>
     </div>
 
     <div class="pxart blossom">

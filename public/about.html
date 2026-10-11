@@ -10,20 +10,152 @@
         background-color: #FDF6E3;
         background-image: radial-gradient(#dda0d2 1px, transparent 1px);
         background-size: 25px 25px;
-
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
       }
 
+      .canvas {
+        z-index: 1;
+        width: 700px;
+        height: auto;
+        min-height: 600px;
+        background: rgb(255, 248, 253);
+        border-radius: 12px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-color: #fed7f6;
+        border-style: solid;
+        box-sizing: border-box;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+
+      .tiny-text {
+        padding-left: 270px;
+        font-size: 12px;
+        font-style: italic;
+      }
+
+      .hobbies {
+        display: flex;
+        gap: 60px;
+      }
+
+      .hobby-column {
+        flex: 1;
+      }
+
+      .hobby-column h4 {
+        font-weight: normal;
+        margin-top: 6px;
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+      }
+
+      .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .bunny {
+        position: absolute;
+        bottom: 15px;
+        right: 25px;
+        max-width: 100px;
+        height: auto;
+      }
+
+      .intro-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .bunny2 {
+        max-width: 50px;
+        height: auto;
+      }
+
+      .bunny3 {
+        max-width: 180px;
+        height: 70px;
+        margin-bottom: -14px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .intro {
+        padding-left: 13px;
+      }
+
     </style>
   </head>
   <body>
+    <div class="page-wrapper">
+      <img class="bunny3" src="Images/bunny3.png">
+      <div class="canvas">
 
-    <p> 
-      eek nothing here yet ! <br> you'll get to know me soon ! 
-    </p>
-    
+        <div id="navbar-placeholder"></div>
+
+        <br><h3>soo... who are you?</h3><br>
+        <div class="intro-line">
+          <img class="bunny2" src="Images/bunny2.png">
+          <span class="intro">call me Ivy!</span><br> 
+        </div><br>
+        i love journalling, playing games and vlogging with my camera whenever i go somewhere fun!<br><br>
+
+        <b>and what do you like? </b><br>
+        cats! pink! korean corndogs! cute blind boxes! and KIRBY !!!<br>
+        <small class="tiny-text">i'm also super susceptible to cute marketing &gt;.&lt; </small> <br><br>
+
+        <b>what about any dislike?</b><br> 
+        hmmmm getting food stuck between my teeth, mosquitos and headaches grr<br><br>
+
+        <b>so why'd you create this space?</b><br> 
+        for fun ofcourse! <br>
+        my favourite feeling is nostalgia so i like creating things that I can look back on in the future <br><br>
+
+        <b>but then how come you don't update often?</b><br><i>ack! guilty!</i><br>
+        most likely doing one of my many hobbies OR i'm having design paralysis ;w; <br><br>
+
+        <h3>right... what are your hobbies then?</h3>
+
+        <div class="hobbies">
+          <div class="hobby-column">
+            <h4>✩ currently</h4>
+            - electric guitar <br>
+            - playing games <br>
+            - vlog editing <br>
+            - journalling <br>
+            - reading <br>
+            - and ofcourse this website!
+          </div>
+          <div class="hobby-column">
+            <h4>✩ on hiatus</h4>
+            - crocheting <br>
+            - drawing <br>
+            - painting
+          </div>
+          <img class="bunny" src="Images/softbun.png">
+        </div>
+      </div>
+    </div>
+
+    <script>
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
 </html>
